@@ -31,4 +31,4 @@
 - Git por projeto; pastas-pai (holding/raiz) não versionam — estrutura do pai é governança, não código.
 
 ---
-*Doutrina canônica e viva: a página **Information de Arquitetura BEM** no seu Notion. Este repo é o espelho público e genérico — followthelink.*
+*Doutrina canônica e viva: **Information — Arquitetura BEM** → https://fraitz.notion.site/PROMPT-19-Information-Arquitetura-BEM-Base-Estrutural-Multi-usu-rio-3795faf99abc81549d5cd3ffcc7da1d3 . Este repo é o espelho público e genérico — followthelink.*

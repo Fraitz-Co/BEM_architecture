@@ -220,4 +220,4 @@ Elo nunca em git/Notion/chat. Vault é cofre de verdade. Scan de segredos antes 
 *Nota de fábrica:* alguns classificadores de segurança de LLM bloqueiam VARRER/listar o vault (anti-exfiltração) — por isso o catálogo de NOMES é a solução; busca por nome exato sempre passa, varredura não.
 
 ---
-*Canônico: a Information de Arquitetura no seu Notion e este repo são espelhos. Este repo é genérico por design — nenhum identificador concreto (nome de empresa, ticker, link) mora aqui.*
+*Doutrina canônica e viva (Information: Arquitetura BEM): https://fraitz.notion.site/PROMPT-19-Information-Arquitetura-BEM-Base-Estrutural-Multi-usu-rio-3795faf99abc81549d5cd3ffcc7da1d3 — este repo é o espelho genérico; followthelink. Identificadores internos (nome de empresa, ticker) não moram aqui.*
