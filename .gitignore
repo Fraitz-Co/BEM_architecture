@@ -1,0 +1,49 @@
+# Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Elos (Centelhas) — JAMAIS versionar. Abrem a Alma (vault).
+*.elo.env
+.*.elo.env
+!elo.env.example
+
+# Dependências
+node_modules/
+.pnpm-store/
+.yarn/
+
+# Builds
+dist/
+build/
+.next/
+.astro/
+.output/
+.wrangler/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+
+# IDE / IA local
+.vscode/
+.idea/
+.cursor/
+
+# Claude: config local fora, agentes DENTRO (doutrina do híbrido — agentes são Corpo, o time compartilha)
+.claude/*
+!.claude/agents/
+!**/.claude/
+**/.claude/*
+!**/.claude/agents/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Testes / coverage
+coverage/
+.nyc_output/
