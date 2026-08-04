@@ -87,6 +87,24 @@ for G in "${REPOS[@]:-}"; do
 done
 
 echo
+echo "— Um branch só, e ele se chama main —"
+# Repo com main E master é armadilha silenciosa: `git push origin master` num
+# repo cujo padrão é main não dá erro, cria o branch errado e devolve sucesso.
+# O trabalho vai parar num branch que ninguém olha e o deploy segue servindo o
+# main parado. Aconteceu com o xqcw3_paginas em 2026-08-04.
+for G in "${REPOS[@]:-}"; do
+  [ -z "$G" ] && continue
+  REPO="${G%/.git}"
+  TEM_MAIN=$(git -C "$REPO" branch -a --format='%(refname:short)' 2>/dev/null | grep -cE '(^|/)main$' || true)
+  TEM_MASTER=$(git -C "$REPO" branch -a --format='%(refname:short)' 2>/dev/null | grep -cE '(^|/)master$' || true)
+  if [ "$TEM_MAIN" -gt 0 ] && [ "$TEM_MASTER" -gt 0 ]; then
+    falha "${REPO#$BEM_ROOT/}: tem main E master — apague o master"
+  else
+    ok "${REPO#$BEM_ROOT/}: sem branch duplicado"
+  fi
+done
+
+echo
 echo "— Kit BEM nos territórios —"
 # territórios = diretórios que contêm um elo
 for ELO in "${ELOS[@]:-}"; do

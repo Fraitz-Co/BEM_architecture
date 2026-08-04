@@ -58,6 +58,25 @@ O arquivo **continua existindo no disco** (o agente lê o HANDOFF.md antes de ag
 o `bem-doctor.sh` cobra a presença dele). O que muda é só uma coisa: ele não é
 rastreado pelo git, então nunca chega ao GitHub.
 
+## Um branch só, e ele se chama `main`
+
+**Regra cravada:** se existe `main`, `master` não existe. Um repo, um branch de
+verdade. Branch de trabalho é bem-vindo enquanto o trabalho durar, e some quando
+entrar no `main`.
+
+O motivo não é gosto por nome, é uma armadilha que não faz barulho: o `git init`
+antigo cria `master`, o GitHub cria `main`, e **`git push origin master` num repo
+cujo padrão é `main` não dá erro**. Ele cria o branch errado e devolve sucesso. O
+trabalho do dia inteiro fica num branch que ninguém abre, o `main` continua no
+commit de nascimento, e quem olha o GitHub jura que nada foi feito.
+
+Aconteceu em 2026-08-04 no `xqcw3_paginas`: quatro commits foram parar no
+`master` enquanto o `main` remoto seguia parado. O `bem-doctor.sh` reprova
+qualquer repo que tenha os dois.
+
+Ao criar repo novo: `git init -b main`, ou `git branch -m main` antes do primeiro
+push.
+
 ## Modelo de AGENTS.md (enxuto)
 
 ```markdown
