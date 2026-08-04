@@ -26,7 +26,8 @@ Projetos/
     <PROJETO>/
       AGENTS.md                  ← cérebro: aponta a doutrina (método) + Main da empresa
       CLAUDE.md                  ← uma linha: @AGENTS.md (Claude Code não lê AGENTS.md nativo)
-      BRIEFING.md                ← a tarefa de agora (estado vivo, sobrescreve)
+      BRIEFING.md                ← a tarefa de agora (estado vivo, sobrescreve) · LOCAL, fora de git
+      HANDOFF.md                 ← como a última sessão deixou tudo · LOCAL, fora de git
       TASKS.md                   ← links dos PAC/TASK do Notion + checklist da sessão
       CHATS.md                   ← links dos CHAT-NN do projeto (memória no Espírito)
       [código]
@@ -34,6 +35,28 @@ Projetos/
 ```
 
 **Fora:** `.bem/`, `.windsurfrules`/`.cursorrules` (AGENTS.md cobre; Windsurf/Cursor leem nativo), `decisions/` e `runbooks/` (vivem nos Chats), `docs/prds/` (PRD = PAC no Notion). Design system: referência vai no Espírito ou `assets/brand/`; se for biblioteca compartilhada, é projeto próprio.
+
+## Texto de sessão com IA nunca vai pro git
+
+**Regra cravada, sem exceção e sem "só desta vez":** handoff, briefing e qualquer
+registro de sessão com IA (transcrição, resumo de conversa, log de raciocínio,
+"o que fizemos hoje") **não entram em repositório nenhum**. Ficam no disco da
+máquina, e o registro durável vive no **CHAT do Notion**.
+
+Vale para `HANDOFF*.md`, `BRIEFING*.md`, `SESSAO*.md`, `docs/HANDOFF-CHAT*.md` e
+qualquer variação. Todo `.gitignore` de território e de projeto carrega esse bloco,
+e o `bem-doctor.sh` reprova o repo que estiver versionando um desses arquivos.
+
+Por quê, em três linhas:
+- Repositório é **Corpo** (o que roda). Conversa é **Espírito** (o que se lembra).
+  Misturar os dois suja o histórico com texto que envelhece em um dia.
+- Handoff cita valor, sócio, cliente, caminho de vault e estado de produção.
+  Repo privado hoje vira repo aberto amanhã, e o texto vai junto.
+- Handoff versionado gera duas verdades: a do arquivo e a do Notion. A do Notion vence.
+
+O arquivo **continua existindo no disco** (o agente lê o HANDOFF.md antes de agir e
+o `bem-doctor.sh` cobra a presença dele). O que muda é só uma coisa: ele não é
+rastreado pelo git, então nunca chega ao GitHub.
 
 ## Modelo de AGENTS.md (enxuto)
 

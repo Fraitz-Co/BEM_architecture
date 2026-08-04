@@ -70,6 +70,23 @@ for ELO in "${ELOS[@]:-}"; do
 done
 
 echo
+echo "— Texto de sessão fora do git (handoff/briefing só no disco e no Notion) —"
+# nenhum repo pode rastrear handoff, briefing ou transcrição de sessão com IA
+PADRAO='(^|/)(HANDOFF|handoff|BRIEFING|briefing|SESSAO|SESSÃO|SESSION)[^/]*\.md$'
+mapfile -t REPOS < <(find "$BEM_ROOT" -maxdepth 6 -type d -name .git 2>/dev/null)
+for G in "${REPOS[@]:-}"; do
+  [ -z "$G" ] && continue
+  REPO="${G%/.git}"
+  VAZANDO=$(git -C "$REPO" ls-files 2>/dev/null | grep -E "$PADRAO" | grep -v '^templates/')
+  if [ -z "$VAZANDO" ]; then
+    ok "${REPO#$BEM_ROOT/}: nenhum texto de sessão versionado"
+  else
+    QTD=$(echo "$VAZANDO" | wc -l)
+    falha "${REPO#$BEM_ROOT/}: $QTD arquivo(s) de sessão no git — rode git rm --cached e ignore"
+  fi
+done
+
+echo
 echo "— Kit BEM nos territórios —"
 # territórios = diretórios que contêm um elo
 for ELO in "${ELOS[@]:-}"; do

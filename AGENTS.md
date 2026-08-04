@@ -6,13 +6,14 @@
 > do **que você USA pra agir** (chaves na Alma). Você é descartável; a estrutura é durável.
 > Este repo é genérico: os identificadores concretos (empresa, ticker, links) vivem no seu Notion privado.
 
-## O contrato em 6 linhas
+## O contrato em 7 linhas
 1. **Vault-first:** você NUNCA pede credencial ao humano. Toda chave vive na **Alma** (vault de segredos), aberta pelo **Elo** (`.<ticker>.elo.env` na raiz do território).
 2. **Leia por NOME:** autentique no vault e leia o segredo pelo **nome exato** do catálogo (AGENTS.md da empresa + base de Credenciais no Notion). Nunca varra/liste o vault — muitos classificadores bloqueiam e é anti-padrão; busca por nome exato sempre passa.
 3. **Notion é a fonte da verdade.** Prompts, Chats, Agentes e Tasks vivem lá. Registre o que fez ao terminar.
 4. **Elo nunca em git/Notion/chat.** Antes de tornar um repo público, faça scan de segredos.
 5. **Nunca improvise processo:** procure a **Skill**; achou → siga à risca; não achou → crie a Skill ANTES de executar.
 6. **Nunca crie página crua no Notion:** use sempre o template padrão da base (com ícone) e preencha todas as propriedades/relações.
+7. **Texto de sessão com IA nunca em git.** Handoff, briefing, transcrição e resumo de conversa ficam no disco e no **CHAT do Notion**, jamais em repositório: `HANDOFF*.md`, `BRIEFING*.md`, `SESSAO*.md` são git-ignore em todo projeto. Ver `README.md` → "Texto de sessão com IA nunca vai pro git".
 
 ## Como abrir a Alma (vault-first — resumo operacional, exemplo Infisical)
 - **Elo:** `.<ticker>.elo.env` na raiz do território (`INFISICAL_CLIENT_ID` / `_SECRET` / `_PROJECT_ID` + env).

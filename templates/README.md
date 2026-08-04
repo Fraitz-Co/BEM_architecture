@@ -8,13 +8,19 @@ empresa/                          ← vira <EMPRESA>/
   project/                        ← vira <PROJETO>/
     AGENTS.md                     ← cérebro: aponta a doutrina BEM + Main da empresa
     CLAUDE.md                     ← uma linha: @AGENTS.md
-    BRIEFING.md                   ← a tarefa de agora (estado vivo, sobrescreve)
+    BRIEFING.md                   ← a tarefa de agora (estado vivo, sobrescreve) · NUNCA vai pra git
+    HANDOFF.md                    ← estado da última sessão (nasce vazio) · NUNCA vai pra git
     TASKS.md                      ← links dos PAC/TASK do Notion + checklist
     CHATS.md                      ← links dos CHAT-NN (memória no Espírito)
     .claude/agents/agente.md      ← agente híbrido: gancho local, identidade no PROMPT-NN
 ```
 
 **Fora do template (por doutrina):** ADR/decisões e runbooks vivem nos Chats (Notion); PRD = PAC no Notion. Documentação de projeto mora no Espírito, não em arquivo solto.
+
+**Briefing e handoff moram no disco, não no repo.** São texto de sessão com IA: o
+`.gitignore` do kit os ignora e o registro durável vai pro CHAT do Notion. Os dois
+arquivos aqui em `templates/` são molde vazio, por isso continuam versionados.
+Ver `../README.md` → "Texto de sessão com IA nunca vai pro git".
 
 ## Pendente
 Template de **SKILL.md** (Agent Skills specification, agentskills.io) — entra quando a spec for adotada pros PROMPTs Skill.

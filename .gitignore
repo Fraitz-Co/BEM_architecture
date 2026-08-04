@@ -27,6 +27,19 @@ build/
 .parcel-cache/
 .turbo/
 
+# Texto de sessão com IA (handoff, briefing, transcrição) — JAMAIS versionar.
+# Isso é memória de conversa, não é Corpo. Vive no disco da máquina e no CHAT do Notion.
+HANDOFF*.md
+handoff*.md
+BRIEFING*.md
+briefing*.md
+SESSAO*.md
+SESSÃO*.md
+SESSION*.md
+# Exceção: os moldes vazios do kit, que são estrutura e não conversa.
+!templates/empresa/project/BRIEFING.md
+!templates/empresa/project/HANDOFF.md
+
 # IDE / IA local
 .vscode/
 .idea/
