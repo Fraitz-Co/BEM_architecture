@@ -216,7 +216,7 @@ Pasta nova se cria com o comando, nunca copiando a pasta de outro agente (vem ju
 
 ```bash
 # de dentro da pasta do território
-bem-novo-agente xqmt3-tech "Ada" "tecnologia" 9225
+bem-novo-agente abcd3-tech "Ada" "tecnologia" 9225
 ```
 
 O molde que ele copia está em `templates/empresa/agente/`.
