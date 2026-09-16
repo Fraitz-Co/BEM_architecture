@@ -209,6 +209,18 @@ INFISICAL_ENVIRONMENT=prod
 
 **Alternativa single-bloco:** manter um Elo por Alma (um `.<ticker>.elo.env` por território, inclusive nos subterritórios aninhados) e deixar o aninhamento de pastas resolver quem abre o quê. O spin-off aninhado (`<HOLDING>/<SPINOFF>/.<ticker-spinoff>.elo.env`) tem seu próprio Elo single-bloco; o Elo do pai pode, opcionalmente, carregar o bloco do filho para alcançá-lo de fora.
 
+## Agentes — a cartilha é obrigatória
+Agente de área (o que cuida de suporte, infra, vendas, tráfego, marketing, tecnologia, projetos) nasce pela cartilha: **[`AGENTES.md`](AGENTES.md)**. Ela diz quando se cria um agente, a forma da pasta, as leis que ele cumpre (segredo, cofre, uma sessão por pasta, produção, prova) e **como ele organiza tarefa para o trabalho aparecer no painel do time**.
+
+Pasta nova se cria com o comando, nunca copiando a pasta de outro agente (vem junto a lei do outro e o catálogo de segredos do outro):
+
+```bash
+# de dentro da pasta do território
+bem-novo-agente xqmt3-tech "Ada" "tecnologia" 9225
+```
+
+O molde que ele copia está em `templates/empresa/agente/`.
+
 ## Agentes — híbrido Corpo + Espírito
 - Agente permanente = arquivo `.md` mínimo na pasta da ferramenta (`.claude/agents/`, `.gemini/agents/`): nome, ferramentas e "missão: ver PROMPT-NN".
 - A identidade completa (skills, tom, instruções) vive no Espírito (Notion, PROMPT-NN). O `.md` local é só o gancho que a ferramenta exige.

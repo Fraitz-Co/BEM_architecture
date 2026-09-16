@@ -1,0 +1,67 @@
+# .gitignore padrão de agente. Não tire linha daqui: cada bloco existe por um estrago.
+
+# Segredo
+.env
+.env.local
+.env.*.local
+*.elo.env
+!.env.example
+
+# Dependências
+node_modules/
+.pnpm-store/
+.yarn/
+.venv/
+__pycache__/
+
+# Builds
+dist/
+build/
+.next/
+.astro/
+.output/
+.wrangler/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+.playwright-mcp/
+
+# IDE e IA local
+.vscode/
+.idea/
+.cursor/
+
+# Claude: configuração local fora, agentes e skills dentro.
+# A skill carrega o procedimento que saiu do AGENTS.md. Se ela ficar ignorada,
+# o agente perde a própria lei no próximo clone.
+.claude/*
+!.claude/agents/
+!.claude/skills/
+!**/.claude/
+**/.claude/*
+!**/.claude/agents/
+!**/.claude/skills/
+
+# DADO DE PESSOA, NUNCA VAI PARA O GIT
+# Nome, telefone, e-mail, documento e dado de compra de cliente. São fotos de
+# investigação, descartáveis, e o que importa delas vira registro no Notion.
+# Um repositório desta casa já precisou expurgar 40 MB de dado de aluno do histórico.
+dados/
+_rascunho/
+
+# Texto de sessão com IA (handoff, briefing, transcrição): JAMAIS versionar.
+# É memória de conversa, não é obra da empresa. Vive no disco e no CHAT do Notion.
+HANDOFF*.md
+handoff*.md
+BRIEFING*.md
+briefing*.md
+SESSAO*.md
+SESSÃO*.md
+SESSION*.md
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
