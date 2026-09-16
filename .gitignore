@@ -39,8 +39,6 @@ SESSION*.md
 # Exceção: os moldes vazios do kit, que são estrutura e não conversa.
 !templates/empresa/project/BRIEFING.md
 !templates/empresa/project/HANDOFF.md
-!templates/empresa/agente/BRIEFING.md
-!templates/empresa/agente/HANDOFF.md
 
 # IDE / IA local
 .vscode/

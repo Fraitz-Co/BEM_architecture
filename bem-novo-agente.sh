@@ -82,6 +82,15 @@ HOJE="$(date +%d/%m/%Y)"
 
 cp -r "$MOLDE" "$PASTA"
 
+# BRIEFING e HANDOFF viajam como `.modelo` porque o .gitignore do molde (que é o mesmo
+# que vai para o agente) proíbe versionar texto de sessão. Aqui eles viram os arquivos
+# de verdade, já fora do git do agente novo.
+for base in BRIEFING HANDOFF; do
+  if [[ -f "$PASTA/$base.md.modelo" ]]; then
+    mv "$PASTA/$base.md.modelo" "$PASTA/$base.md"
+  fi
+done
+
 # Troca os marcadores. Só nos arquivos de texto do molde.
 while IFS= read -r -d '' arquivo; do
   python3 - "$arquivo" "$PASTA" "$AGENTE" "$AREA" "$TICKER" "$ELO_REL" "$PORTA_TXT" <<'PY'
